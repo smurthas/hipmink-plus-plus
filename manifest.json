@@ -1,0 +1,26 @@
+{
+  "name": "Hipmunk++",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "icon": "icon.png",
+  "icons": {
+    "128":"icon128.png",
+    "48":"icon48.png",
+    "16":"icon16.png"
+  },
+  "default_icon":"icon.png",
+  "description": "Make Hipmunk better by adding a WiFi-only toggle and defaulting to non-stops",
+  "content_scripts": [
+    {
+      "matches": ["http://www.hipmunk.com/*"],
+      "js": [
+        "js/jquery.min.js",
+        "js/hipmunk.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "http://www.hipmunk.com/"
+  ],
+  "content_security_policy": "script-src 'self' https://api.singly.com; object-src 'self'"
+}
